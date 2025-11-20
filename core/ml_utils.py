@@ -8,7 +8,7 @@ from django.conf import settings
 
 # Configuración Hardcoded o desde variables de entorno (Recomendado .env en producción)
 # Asegúrate de usar la misma URI que en el script de subida
-MONGO_URI = "mongodb+srv://<USUARIO>:<PASSWORD>@<CLUSTER>.mongodb.net/?retryWrites=true&w=majority"
+MONGO_URI = "mongodb+srv://mendoza30josue_db_user:FtkUaI5cinhT2fRI@clustersigmoid.mvjjbfl.mongodb.net/?appName=ClusterSigmoid"
 DB_NAME = "Cluster0"
 MODEL_FILENAME = 'random_forest_model.pkl'
 
