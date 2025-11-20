@@ -1,8 +1,59 @@
-/data
-
-echo "venv/
+# ------------------------------------------------------
+# 1. PYTHON & DJANGO (Archivos compilados y temporales)
+# ------------------------------------------------------
 __pycache__/
-*.pkl
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Base de datos local de desarrollo (si se generó)
+db.sqlite3
+
+# ------------------------------------------------------
+# 2. SEGURIDAD (¡CRITICO!)
+# ------------------------------------------------------
+# Variables de entorno con contraseñas de Mongo Atlas
 .env
+
+# ------------------------------------------------------
+# 3. BIG DATA & MODELOS (Para evitar errores en Render)
+# ------------------------------------------------------
+# Ignoramos el dataset gigante (600MB+)
+TotalFeatures-ISCXFlowMeter.csv
+
+# Ignoramos todos los CSV por seguridad de espacio...
+*.csv
+
+# ...PERO forzamos la subida del archivo pequeño de muestra para el frontend
+!sample_head.csv
+
+# Ignoramos los modelos entrenados (binarios pesados)
+# Ya que estos se suben a Mongo Atlas mediante el script local
+*.pkl
+*.joblib
+models_backup/
+
+# ------------------------------------------------------
+# 4. ENTORNOS VIRTUALES
+# ------------------------------------------------------
+# Carpetas típicas de venv o anaconda local
+env/
+venv/
+.venv/
+.conda/
+
+# ------------------------------------------------------
+# 5. ARCHIVOS ESTÁTICOS (Producción)
+# ------------------------------------------------------
+# Django genera esta carpeta al desplegar, no debemos subirla nosotros
+staticfiles/
+
+# ------------------------------------------------------
+# 6. IDEs y SISTEMA OPERATIVO (Archcraft/Linux/Mac/Windows)
+# ------------------------------------------------------
 .DS_Store
-*.csv"
+.vscode/
+.idea/
+*.log
+.py
