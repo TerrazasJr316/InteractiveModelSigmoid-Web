@@ -82,15 +82,10 @@ WSGI_APPLICATION = 'funtionSigmoid.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'Cluster0', # Nombre de tu DB en Atlas
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'mongodb+srv://<USUARIO>:<PASSWORD>@<CLUSTER-URL>/?retryWrites=true&w=majority'
-        }  
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
