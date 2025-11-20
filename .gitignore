@@ -1,0 +1,8 @@
+/data
+
+echo "venv/
+__pycache__/
+*.pkl
+.env
+.DS_Store
+*.csv"
