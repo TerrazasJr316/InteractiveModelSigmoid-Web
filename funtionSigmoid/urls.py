@@ -16,7 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core import views  # Importante: importar las vistas de tu app 'core'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Esta es la linea que te falta para la pagina de inicio:
+    path('', views.index, name='home'),
+    
+    # Estas son las de la API:
+    path('api/preview/', views.get_preview_data, name='preview'),
+    path('api/train/', views.train_api, name='train'),
+    path('api/sigmoid/', views.calculate_sigmoid, name='sigmoid'),
 ]
